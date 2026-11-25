@@ -1,0 +1,520 @@
+/* Variáveis alinhadas à identidade visual da RT AGRO */
+:root {
+    --verde-escuro: #1f4e18;
+    --verde-campo: #4f8a1e;
+    --verde-claro: #76b82a;
+    --azul-agro: #0b4f8a;
+    --azul-escuro: #07335a;
+    --fundo-claro: #f4f7f3;
+    --branco: #ffffff;
+    --texto-principal: #1e2923;
+    --texto-secundario: #4b5a52;
+    --borda: #d8e2d5;
+    --sombra: 0 8px 22px rgba(15, 35, 20, 0.07);
+    --raio: 12px;
+    --transicao: all 0.22s ease;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--texto-principal);
+    background-color: var(--branco);
+    line-height: 1.55;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, strong {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.22;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: min(92%, 1140px);
+    margin: 0 auto;
+}
+
+/* Espaçamento compacto entre seções */
+.section {
+    padding: clamp(42px, 5vw, 64px) 0;
+}
+
+/* Seção Principal (Hero) Compacta com Destaque em Volta do Logo */
+.hero {
+    position: relative;
+    padding: clamp(32px, 4.5vw, 52px) 0;
+    background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--azul-escuro) 100%);
+    color: var(--branco);
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 35%, rgba(118, 184, 42, 0.24), transparent 55%);
+    pointer-events: none;
+}
+
+.hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.85fr);
+    gap: clamp(22px, 4vw, 40px);
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: rgba(118, 184, 42, 0.22);
+    border: 1px solid rgba(118, 184, 42, 0.55);
+    color: #e4f8c4;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: clamp(0.94rem, 1.2vw, 1.02rem);
+    color: #eaf2ed;
+    margin-bottom: 18px;
+    max-width: 620px;
+}
+
+/* Bloco Interativo de Frentes Agro */
+.agro-interativo {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: var(--raio);
+    padding: 14px 16px;
+    max-width: 620px;
+}
+
+.agro-interativo-titulo {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #dff5bd;
+    margin-bottom: 10px;
+}
+
+.agro-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.chip-agro {
+    background-color: rgba(255, 255, 255, 0.14);
+    color: var(--branco);
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    padding: 7px 13px;
+    border-radius: 999px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.chip-agro:hover {
+    background-color: rgba(118, 184, 42, 0.35);
+}
+
+.chip-agro.ativo {
+    background-color: var(--verde-claro);
+    color: #10240c;
+    border-color: var(--verde-claro);
+}
+
+.agro-resumo {
+    margin-bottom: 0 !important;
+    font-size: 0.9rem !important;
+    color: var(--branco) !important;
+}
+
+/* Estilização em volta do logotipo principal */
+.logo-showcase {
+    background-color: var(--branco);
+    color: var(--texto-principal);
+    border-radius: 16px;
+    padding: 16px;
+    border: 2px solid rgba(118, 184, 42, 0.85);
+    box-shadow:
+        0 0 0 6px rgba(118, 184, 42, 0.18),
+        0 16px 34px rgba(0, 0, 0, 0.26);
+    text-align: center;
+}
+
+.logo-frame {
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+.logo-frame img {
+    max-height: 200px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-showcase-info {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 2px solid var(--verde-campo);
+}
+
+.logo-showcase-info strong {
+    display: block;
+    color: var(--azul-agro);
+    font-size: 1.05rem;
+}
+
+.logo-showcase-info span {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--texto-secundario);
+    margin-top: 2px;
+}
+
+/* Cabeçalhos de Seção */
+.section-header {
+    text-align: center;
+    max-width: 740px;
+    margin: 0 auto 30px;
+}
+
+.section-tag {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--azul-agro);
+    margin-bottom: 6px;
+}
+
+.section-header h2 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: var(--texto-secundario);
+    font-size: 0.96rem;
+}
+
+/* Seção Sobre */
+.sobre {
+    background-color: var(--branco);
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(22px, 4vw, 38px);
+    align-items: center;
+}
+
+.sobre-texto h3 {
+    font-size: clamp(1.15rem, 1.8vw, 1.32rem);
+    color: var(--verde-escuro);
+    margin-bottom: 10px;
+}
+
+.sobre-texto p {
+    color: var(--texto-secundario);
+    margin-bottom: 12px;
+    font-size: 0.96rem;
+}
+
+.destaques-lista {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 8px 14px;
+}
+
+.destaques-lista li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--texto-principal);
+}
+
+.destaques-lista li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--verde-campo);
+    font-weight: 700;
+}
+
+/* Vídeo 100% enquadrado no quadro sem cortes */
+.video-box {
+    background-color: var(--fundo-claro);
+    padding: 12px;
+    border-radius: var(--raio);
+    border: 1px solid var(--borda);
+    box-shadow: var(--sombra);
+}
+
+.video-frame {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    max-height: 440px;
+    margin: 0 auto;
+    background-color: #0b140e;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.legenda-midia {
+    margin-top: 8px;
+    font-size: 0.84rem;
+    color: var(--texto-secundario);
+    text-align: center;
+}
+
+/* Seção Tecnologia */
+.tecnologia {
+    background-color: var(--fundo-claro);
+}
+
+.tecnologia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background-color: var(--branco);
+    border-radius: var(--raio);
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fotos encaixadas de borda a borda nos cards */
+.card-img {
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--borda);
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h3 {
+    font-size: 1.12rem;
+    color: var(--azul-escuro);
+    margin-bottom: 8px;
+}
+
+.card-body p {
+    color: var(--texto-secundario);
+    font-size: 0.93rem;
+}
+
+/* Chamada Final: Entre em Contato pelo Instagram */
+.instagram-cta {
+    background-color: var(--branco);
+}
+
+.insta-box {
+    background: linear-gradient(120deg, var(--azul-escuro), var(--verde-escuro));
+    color: var(--branco);
+    padding: clamp(24px, 4vw, 36px);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: var(--sombra);
+    border: 1px solid rgba(118, 184, 42, 0.45);
+}
+
+.insta-selo {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #dff5bd;
+    margin-bottom: 6px;
+}
+
+.insta-conteudo h2 {
+    font-size: clamp(1.3rem, 2.3vw, 1.8rem);
+    margin-bottom: 8px;
+}
+
+.insta-conteudo p {
+    color: #e7f0ea;
+    font-size: 0.95rem;
+    max-width: 660px;
+}
+
+.btn-instagram {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border-radius: 10px;
+    background-color: var(--branco);
+    color: var(--verde-escuro);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    flex-shrink: 0;
+    transition: var(--transicao);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.btn-instagram:hover {
+    background-color: #e8f7d6;
+    transform: translateY(-2px);
+}
+
+.icone-instagram {
+    color: var(--azul-agro);
+    flex-shrink: 0;
+}
+
+/* Rodapé Compacto */
+.footer {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.footer-brand strong {
+    font-size: 1rem;
+    display: block;
+}
+
+.footer-brand p,
+.footer-copy {
+    font-size: 0.85rem;
+    color: #dce8de;
+}
+
+/* Responsividade: logo acima do texto no celular */
+@media (max-width: 900px) {
+    .hero-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo-showcase {
+        order: -1;
+        max-width: 340px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .hero-content {
+        order: 1;
+        width: 100%;
+    }
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insta-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-img {
+        height: 290px;
+    }
+
+    .video-frame {
+        max-height: 380px;
+    }
+
+    .btn-instagram {
+        width: 100%;
+    }
+}
