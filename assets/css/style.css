@@ -5,6 +5,9 @@
     --verde-claro: #76b82a;
     --azul-agro: #0b4f8a;
     --azul-escuro: #07335a;
+    --whatsapp-oficial: #25D366;
+    --whatsapp-escuro: #128C7E;
+    --instagram-magenta: #E1306C;
     --fundo-claro: #f4f7f3;
     --branco: #ffffff;
     --texto-principal: #1e2923;
@@ -12,7 +15,7 @@
     --borda: #d8e2d5;
     --sombra: 0 8px 22px rgba(15, 35, 20, 0.07);
     --raio: 12px;
-    --transicao: all 0.22s ease;
+    --transicao: all 0.24s ease;
 }
 
 *,
@@ -383,71 +386,149 @@ ul {
     font-size: 0.93rem;
 }
 
-/* Chamada Final: Entre em Contato pelo Instagram */
-.instagram-cta {
-    background-color: var(--branco);
+/* Seção de Contato Solta, Estilizada e Interativa */
+.contato-solto {
+    background: linear-gradient(180deg, var(--branco) 0%, #f7faf6 100%);
+    padding: clamp(38px, 5vw, 58px) 0;
+    border-top: 1px solid var(--borda);
 }
 
-.insta-box {
-    background: linear-gradient(120deg, var(--azul-escuro), var(--verde-escuro));
-    color: var(--branco);
-    padding: clamp(24px, 4vw, 36px);
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    box-shadow: var(--sombra);
-    border: 1px solid rgba(118, 184, 42, 0.45);
+.contato-cabecalho {
+    margin-bottom: 22px;
 }
 
-.insta-selo {
+.contato-tag {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.74rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: #dff5bd;
-    margin-bottom: 6px;
+    letter-spacing: 0.08em;
+    color: var(--azul-agro);
+    margin-bottom: 4px;
 }
 
-.insta-conteudo h2 {
-    font-size: clamp(1.3rem, 2.3vw, 1.8rem);
-    margin-bottom: 8px;
+.contato-cabecalho h2 {
+    font-size: clamp(1.45rem, 2.5vw, 1.95rem);
+    color: var(--verde-escuro);
 }
 
-.insta-conteudo p {
-    color: #e7f0ea;
-    font-size: 0.95rem;
-    max-width: 660px;
+.contato-traco {
+    display: block;
+    width: 54px;
+    height: 3px;
+    margin-top: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--verde-campo), var(--azul-agro));
 }
 
-.btn-instagram {
+.contato-linhas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.contato-linha {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 6px 10px 6px 0;
+    color: var(--texto-principal);
+    transition: var(--transicao);
+}
+
+.contato-linha::after {
+    content: "";
+    position: absolute;
+    left: 52px;
+    right: 10px;
+    bottom: 2px;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+    border-radius: 2px;
+}
+
+.linha-instagram::after {
+    background: linear-gradient(90deg, #f09433, #dc2743, #bc1888);
+}
+
+.linha-whatsapp::after {
+    background-color: var(--whatsapp-oficial);
+}
+
+.contato-linha:hover {
+    transform: translateX(6px);
+}
+
+.contato-linha:hover::after {
+    transform: scaleX(1);
+}
+
+/* Ícones com cores oficiais */
+.contato-icone {
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 13px 22px;
-    border-radius: 10px;
-    background-color: var(--branco);
-    color: var(--verde-escuro);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 0.92rem;
+    color: var(--branco);
     flex-shrink: 0;
     transition: var(--transicao);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
 }
 
-.btn-instagram:hover {
-    background-color: #e8f7d6;
-    transform: translateY(-2px);
+.icone-instagram-oficial {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    box-shadow: 0 5px 14px rgba(214, 36, 159, 0.26);
 }
 
-.icone-instagram {
-    color: var(--azul-agro);
-    flex-shrink: 0;
+.icone-whatsapp-oficial {
+    background-color: var(--whatsapp-oficial);
+    box-shadow: 0 5px 14px rgba(37, 211, 102, 0.28);
+}
+
+.contato-linha:hover .contato-icone {
+    transform: scale(1.08);
+}
+
+.contato-dado {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.04rem, 1.9vw, 1.2rem);
+    font-weight: 700;
+    transition: var(--transicao);
+}
+
+.linha-instagram:hover .contato-dado {
+    color: var(--instagram-magenta);
+}
+
+.linha-whatsapp:hover .contato-dado {
+    color: var(--whatsapp-escuro);
+}
+
+.contato-indicador {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--texto-secundario);
+    opacity: 0.65;
+    transition: var(--transicao);
+}
+
+.contato-linha:hover .contato-indicador {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
+.contato-status {
+    margin-top: 12px;
+    min-height: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--verde-escuro);
 }
 
 /* Rodapé Compacto */
@@ -498,11 +579,6 @@ ul {
     .sobre-grid {
         grid-template-columns: 1fr;
     }
-
-    .insta-box {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 }
 
 @media (max-width: 600px) {
@@ -512,9 +588,5 @@ ul {
 
     .video-frame {
         max-height: 380px;
-    }
-
-    .btn-instagram {
-        width: 100%;
     }
 }
