@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const anoAtual = document.getElementById('ano-atual');
     const chipsAgro = document.querySelectorAll('.chip-agro');
     const resumoAgro = document.getElementById('agro-resumo');
+    const linksContato = document.querySelectorAll('.contato-linha');
+    const contatoStatus = document.getElementById('contato-status');
 
     // Atualiza o ano no rodapé automaticamente
     if (anoAtual) {
@@ -29,6 +31,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (alvo && mensagensAgro[alvo]) {
                     resumoAgro.innerHTML = mensagensAgro[alvo];
                 }
+            });
+        });
+    }
+
+    // Feedback sutil ao interagir com os canais de contato
+    if (linksContato.length && contatoStatus) {
+        linksContato.forEach((link) => {
+            link.addEventListener('mouseenter', () => {
+                const canal = link.getAttribute('data-canal');
+                if (canal === 'Instagram') {
+                    contatoStatus.textContent = 'Clique para abrir o perfil oficial no Instagram.';
+                } else if (canal === 'WhatsApp') {
+                    contatoStatus.textContent = 'Clique para iniciar uma conversa direta no WhatsApp.';
+                }
+            });
+
+            link.addEventListener('mouseleave', () => {
+                contatoStatus.textContent = '';
             });
         });
     }
